@@ -1,5 +1,12 @@
 # 🚀 Saad Tamer Abo-Elazm | AI Engineer Portfolio
 
+
+<div align="center">
+
+[![Live Demo](https://img.shields.io/badge/Live_Deployment-saadtamer--portfolio.vercel.app-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://saadtamer-portfolio.vercel.app/)
+
+</div>
+
 <div align="center">
 
 ![Saad Tamer Abo-Elazm](public/profile.jpg)
