@@ -1,20 +1,10 @@
 import React, { useState } from 'react';
-import { ArrowUpRight, Sparkles, Terminal, Camera, Layers, Cpu, BrainCircuit } from 'lucide-react';
+import { ArrowUpRight, Sparkles, Terminal, Layers, Cpu, BrainCircuit } from 'lucide-react';
 import { personalData, technicalPillars } from '../data/portfolioData';
 import { GithubIcon, LinkedinIcon, WhatsAppIcon } from './SocialIcons';
 
 export default function Hero() {
-  const [photoUrl, setPhotoUrl] = useState(personalData.avatar || '/profile.png');
   const [imageError, setImageError] = useState(false);
-
-  const handlePhotoUpload = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      const url = URL.createObjectURL(file);
-      setPhotoUrl(url);
-      setImageError(false);
-    }
-  };
 
   return (
     <section id="about" className="relative pt-36 pb-20 md:pt-44 md:pb-28 overflow-hidden">
@@ -54,7 +44,7 @@ export default function Hero() {
               
               {!imageError ? (
                 <img
-                  src={photoUrl}
+                  src={personalData.avatar || '/profile.png'}
                   alt={personalData.name}
                   onError={() => setImageError(true)}
                   className="w-full h-full object-cover rounded-[22px] transition-transform duration-500 group-hover:scale-105"
@@ -71,26 +61,9 @@ export default function Hero() {
               )}
 
               {/* Status Badge on Portrait */}
-              <div className="absolute bottom-3 left-3 right-3 px-3 py-1.5 rounded-xl bg-black/75 backdrop-blur-md border border-white/10 flex items-center justify-between text-[11px] font-mono">
-                <span className="flex items-center gap-1.5 text-emerald-400">
-                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                  Active
-                </span>
-                
-                {/* Upload Action */}
-                <label 
-                  className="flex items-center gap-1 text-white/70 hover:text-white cursor-pointer transition-colors"
-                  title="Upload profile picture"
-                >
-                  <Camera className="w-3 h-3 text-amber-400" />
-                  <span className="text-[10px]">Change</span>
-                  <input
-                    type="file"
-                    accept="image/*"
-                    onChange={handlePhotoUpload}
-                    className="hidden"
-                  />
-                </label>
+              <div className="absolute bottom-3 left-3 right-3 px-3 py-1.5 rounded-xl bg-black/75 backdrop-blur-md border border-white/10 flex items-center justify-center gap-2 text-[11px] font-mono">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span className="text-emerald-400 font-medium">Available for Opportunities</span>
               </div>
 
             </div>
